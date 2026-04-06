@@ -16,27 +16,27 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav className="fixed top-0 left-0 w-full z-50 bg-beige-50/90 backdrop-blur-md border-b border-beige-100">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-24">
           <div className="flex items-center">
-            <Link to="/" className="flex items-center gap-2">
-              <span className="text-2xl font-bold text-gray-900">ॐ श्री</span>
+            <Link to="/" className="flex items-center gap-3 group">
+              <span className="text-3xl font-bold text-gray-900 font-serif">ॐ श्री</span>
               <div className="flex flex-col leading-none">
-                <span className="text-sm font-bold tracking-wider uppercase">Om Shree</span>
-                <span className="text-[10px] font-medium tracking-widest uppercase text-gray-500">Interiors</span>
+                <span className="text-lg font-bold tracking-wider uppercase text-gray-900">Om Shree</span>
+                <span className="text-[11px] font-bold tracking-[0.2em] uppercase text-gray-400">Interiors</span>
               </div>
             </Link>
           </div>
 
           {/* Desktop Nav */}
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-10">
             {navLinks.map((link) => (
               <Link
                 key={link.name}
                 to={link.path}
-                className={`text-sm font-medium transition-colors hover:text-gray-900 ${
-                  location.pathname === link.path ? 'text-gray-900' : 'text-gray-500'
+                className={`text-sm font-bold uppercase tracking-widest transition-colors hover:text-gray-900 ${
+                  location.pathname === link.path ? 'text-gray-900' : 'text-gray-400'
                 }`}
               >
                 {link.name}
@@ -44,7 +44,7 @@ const Navbar = () => {
             ))}
             <Link
               to="/contact"
-              className="bg-black text-white px-6 py-2.5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
+              className="bg-gray-900 text-white px-8 py-3.5 rounded-full text-sm font-bold uppercase tracking-widest hover:bg-black transition-all shadow-lg hover:shadow-xl active:scale-95"
             >
               Let's Talk
             </Link>

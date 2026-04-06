@@ -84,26 +84,26 @@ const Home = () => {
       <section className="py-24 px-4 max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
-            <h2 className="text-4xl font-bold mb-8 tracking-tight">Roots of Om Shree</h2>
+            <h2 className="text-5xl font-bold mb-8 tracking-tight text-gray-900">Roots of Om Shree</h2>
             <p className="text-gray-600 leading-relaxed mb-8 text-lg">
               We specialize in custom-crafted furniture and precision carpentry, blending traditional skills with modern design. 
               From modular solutions to timeless woodwork, we deliver durable, elegant pieces tailored to your space.
             </p>
             <div className="grid grid-cols-2 gap-6">
-              <div className="p-6 bg-gray-50 rounded-2xl">
-                <span className="block text-3xl font-bold mb-1">80-90%</span>
-                <span className="text-sm text-gray-500 font-medium uppercase tracking-wider">In-House Production</span>
+              <div className="p-8 bg-beige-100 rounded-3xl">
+                <span className="block text-4xl font-bold mb-1 text-gray-900">80-90%</span>
+                <span className="text-xs text-gray-500 font-bold uppercase tracking-widest">In-House Production</span>
               </div>
-              <div className="p-6 bg-gray-50 rounded-2xl">
-                <span className="block text-3xl font-bold mb-1">15+</span>
-                <span className="text-sm text-gray-500 font-medium uppercase tracking-wider">Years Experience</span>
+              <div className="p-8 bg-beige-100 rounded-3xl">
+                <span className="block text-4xl font-bold mb-1 text-gray-900">15+</span>
+                <span className="text-xs text-gray-500 font-bold uppercase tracking-widest">Years Experience</span>
               </div>
             </div>
           </div>
-          <div className="relative aspect-[4/3] rounded-3xl overflow-hidden shadow-2xl">
+          <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
             <img 
-              src="https://picsum.photos/seed/roots/1200/900" 
-              alt="Roots of Om Shree" 
+              src="https://picsum.photos/seed/modular-kitchen-luxury/1200/900" 
+              alt="Modular Kitchen Design" 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
             />
@@ -112,33 +112,45 @@ const Home = () => {
       </section>
 
       {/* Services Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-beige-100">
         <div className="max-w-7xl mx-auto px-4">
           <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-8">
             <div>
-              <h2 className="text-4xl font-bold mb-4 tracking-tight">Services</h2>
-              <p className="text-gray-500 max-w-xl">
+              <h2 className="text-5xl font-bold mb-4 tracking-tight text-gray-900">Our Services</h2>
+              <p className="text-gray-500 max-w-xl text-lg">
                 We provide a comprehensive range of interior services, ensuring every detail is handled with precision and care.
               </p>
             </div>
-            <Link to="/services" className="text-sm font-bold uppercase tracking-widest flex items-center gap-2 group">
+            <Link to="/services" className="text-sm font-bold uppercase tracking-widest flex items-center gap-2 group text-gray-900">
               View All Services <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {services.map((service, index) => (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              { title: "Home Interior", img: "https://picsum.photos/seed/luxury-living-room-1/800/600" },
+              { title: "Modular Kitchen", img: "https://picsum.photos/seed/modern-kitchen-1/800/600" },
+              { title: "Bedroom Design", img: "https://picsum.photos/seed/luxury-bedroom-1/800/600" }
+            ].map((service, index) => (
               <motion.div 
-                key={service}
-                whileHover={{ y: -5 }}
-                className="bg-white p-8 rounded-2xl shadow-sm border border-gray-100 flex items-start gap-4"
+                key={service.title}
+                whileHover={{ y: -10 }}
+                className="bg-white rounded-[32px] overflow-hidden shadow-sm border border-gray-100 group"
               >
-                <div className="w-10 h-10 rounded-full bg-black text-white flex items-center justify-center shrink-0 font-bold text-sm">
-                  0{index + 1}
+                <div className="aspect-[4/3] overflow-hidden">
+                  <img 
+                    src={service.img} 
+                    alt={service.title} 
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    referrerPolicy="no-referrer"
+                  />
                 </div>
-                <div>
-                  <h3 className="text-lg font-bold mb-2">{service}</h3>
-                  <p className="text-sm text-gray-500 leading-relaxed">
+                <div className="p-8">
+                  <div className="w-10 h-10 rounded-full bg-beige-200 text-gray-900 flex items-center justify-center mb-6 font-bold text-sm">
+                    0{index + 1}
+                  </div>
+                  <h3 className="text-2xl font-bold mb-3 text-gray-900">{service.title}</h3>
+                  <p className="text-gray-500 leading-relaxed">
                     Expertly delivered with our signature attention to detail and quality craftsmanship.
                   </p>
                 </div>
@@ -151,21 +163,21 @@ const Home = () => {
       {/* Projects Teaser */}
       <section className="py-24">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="relative h-[600px] rounded-[40px] overflow-hidden group">
+          <div className="relative h-[700px] rounded-[60px] overflow-hidden group">
             <img 
-              src="https://picsum.photos/seed/projects-teaser/1920/1080" 
-              alt="Projects" 
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              src="https://picsum.photos/seed/luxury-interior-setup/1920/1080" 
+              alt="Luxury Interior Projects" 
+              className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
               referrerPolicy="no-referrer"
             />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent flex flex-col justify-end p-12">
-              <span className="text-white/60 text-sm font-bold uppercase tracking-[0.3em] mb-4">Most Recent</span>
-              <h2 className="text-white text-5xl font-bold mb-8 tracking-tight">Projects</h2>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/30 to-transparent flex flex-col justify-end p-16">
+              <span className="text-white/60 text-sm font-bold uppercase tracking-[0.4em] mb-4">Portfolio</span>
+              <h2 className="text-white text-6xl font-bold mb-10 tracking-tight">Recent Projects</h2>
               <Link 
                 to="/projects"
-                className="w-fit bg-white text-black px-8 py-4 rounded-full font-bold hover:bg-gray-100 transition-all"
+                className="w-fit bg-white text-black px-10 py-5 rounded-full font-bold hover:bg-beige-100 transition-all text-lg shadow-xl"
               >
-                View All Projects
+                Explore More
               </Link>
             </div>
           </div>

@@ -166,7 +166,7 @@ const Projects = () => {
   ];
 
   return (
-    <div className="bg-white">
+    <div className="bg-beige-50">
       {/* Hero Section */}
       <section className="relative h-[70vh] flex items-center justify-center overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -186,7 +186,7 @@ const Projects = () => {
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold mb-6 tracking-tight"
+            className="text-5xl md:text-8xl font-bold mb-6 tracking-tight"
           >
             Projects
           </motion.h1>
@@ -194,7 +194,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2 }}
-            className="text-lg text-white/80 max-w-2xl mx-auto leading-relaxed"
+            className="text-xl text-white/80 max-w-2xl mx-auto leading-relaxed"
           >
             A showcase of our finest work—where creativity, craftsmanship, and client vision come together to inspire confidence and elevate expectations.
           </motion.p>
@@ -203,45 +203,45 @@ const Projects = () => {
 
       {/* Projects List */}
       <section className="py-24 px-4 max-w-7xl mx-auto">
-        <div className="space-y-32">
+        <div className="space-y-40">
           {projects.map((project, index) => (
             <motion.div 
               key={index}
               initial={{ opacity: 0, y: 40 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              className={`grid grid-cols-1 lg:grid-cols-2 gap-16 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
+              className={`grid grid-cols-1 lg:grid-cols-2 gap-20 items-center ${index % 2 === 1 ? 'lg:flex-row-reverse' : ''}`}
             >
               <div className={index % 2 === 1 ? 'lg:order-2' : ''}>
-                <div className="space-y-8">
+                <div className="space-y-10">
                   <div>
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Architect</h3>
-                    <p className="text-2xl font-bold tracking-tight">{project.architect}</p>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-3">Architect</h3>
+                    <p className="text-3xl font-bold tracking-tight text-gray-900">{project.architect}</p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Client</h3>
-                    <p className="text-2xl font-bold tracking-tight">{project.client}</p>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-3">Client</h3>
+                    <p className="text-3xl font-bold tracking-tight text-gray-900">{project.client}</p>
                   </div>
                   <div>
-                    <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-2">Carpet Area</h3>
-                    <p className="text-2xl font-bold tracking-tight">{project.area}</p>
+                    <h3 className="text-sm font-bold uppercase tracking-widest text-gray-400 mb-3">Carpet Area</h3>
+                    <p className="text-3xl font-bold tracking-tight text-gray-900">{project.area}</p>
                   </div>
                 </div>
               </div>
               
-              <div className={`relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl group cursor-pointer ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
+              <div className={`relative aspect-[4/3] rounded-[60px] overflow-hidden shadow-2xl group cursor-pointer ${index % 2 === 1 ? 'lg:order-1' : ''}`}>
                 {project.images ? (
                   <ProjectSlider images={project.images} alt={project.client} />
                 ) : (
                   <img 
                     src={project.image} 
                     alt={project.client} 
-                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                     referrerPolicy="no-referrer"
                   />
                 )}
                 <div className="absolute inset-0 bg-black/20 group-hover:bg-black/40 transition-all flex items-center justify-center opacity-0 group-hover:opacity-100 pointer-events-none">
-                  <span className="bg-white text-black px-8 py-4 rounded-full font-bold shadow-xl">View Details</span>
+                  <span className="bg-white text-black px-10 py-5 rounded-full font-bold shadow-2xl text-lg">View Details</span>
                 </div>
               </div>
             </motion.div>
@@ -250,37 +250,43 @@ const Projects = () => {
       </section>
 
       {/* Loose Furniture Section */}
-      <section className="py-24 bg-gray-50">
+      <section className="py-24 bg-beige-100">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div>
-              <h2 className="text-4xl font-bold mb-8 tracking-tight">Loose Furniture</h2>
-              <p className="text-gray-600 leading-relaxed text-lg mb-8">
+              <h2 className="text-5xl font-bold mb-8 tracking-tight text-gray-900">Loose Furniture</h2>
+              <p className="text-gray-600 leading-relaxed text-xl mb-10">
                 Loose Furniture includes Sofas, Chairs, and Tables designed for comfort and relaxation. 
                 It adds style and functionality to living rooms, offices, and public spaces.
               </p>
-              <ul className="space-y-4 mb-12">
-                <li className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-black" />
-                  <span className="font-medium">Custom Sofas & Armchairs</span>
+              <ul className="space-y-6 mb-12">
+                <li className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    <CheckCircle2 size={20} className="text-gray-900" />
+                  </div>
+                  <span className="font-bold text-lg text-gray-900">Custom Sofas & Armchairs</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-black" />
-                  <span className="font-medium">Dining & Coffee Tables</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    <CheckCircle2 size={20} className="text-gray-900" />
+                  </div>
+                  <span className="font-bold text-lg text-gray-900">Dining & Coffee Tables</span>
                 </li>
-                <li className="flex items-center gap-3">
-                  <CheckCircle2 size={20} className="text-black" />
-                  <span className="font-medium">Office Desks & Chairs</span>
+                <li className="flex items-center gap-4">
+                  <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm">
+                    <CheckCircle2 size={20} className="text-gray-900" />
+                  </div>
+                  <span className="font-bold text-lg text-gray-900">Office Desks & Chairs</span>
                 </li>
               </ul>
               <button 
                 onClick={() => openWhatsApp('', '', 'I am interested in loose furniture.')}
-                className="inline-flex items-center gap-2 bg-black text-white px-8 py-4 rounded-full font-bold hover:bg-gray-800 transition-all"
+                className="inline-flex items-center gap-2 bg-gray-900 text-white px-10 py-5 rounded-full font-bold hover:bg-black transition-all text-lg shadow-xl"
               >
                 Enquire Now <ArrowRight size={18} />
               </button>
             </div>
-            <div className="relative aspect-[4/3] rounded-[40px] overflow-hidden shadow-2xl">
+            <div className="relative aspect-[4/3] rounded-[60px] overflow-hidden shadow-2xl">
               <ProjectSlider 
                 images={[
                   "https://iili.io/qLSggz7.md.jpg",
